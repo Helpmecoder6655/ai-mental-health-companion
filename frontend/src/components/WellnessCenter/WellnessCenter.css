@@ -1,0 +1,434 @@
+/* WellnessCenter.css */
+.wellness-center {
+  padding: 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.wellness-header {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.wellness-header h2 {
+  font-size: 2rem;
+  color: #2c3e50;
+  margin-bottom: 8px;
+}
+
+.wellness-header p {
+  color: #7f8c8d;
+  font-size: 1.1rem;
+}
+
+/* Stats Section */
+.wellness-stats {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 20px;
+  margin-bottom: 40px;
+}
+
+.stat-card {
+  background: white;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.stat-icon {
+  font-size: 2rem;
+}
+
+.stat-info h3 {
+  margin: 0 0 5px 0;
+  color: #2c3e50;
+}
+
+.stat-info p {
+  margin: 0;
+  color: #7f8c8d;
+  font-size: 0.9rem;
+}
+
+/* Wellness Grid */
+.wellness-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 25px;
+  margin-bottom: 40px;
+}
+
+.wellness-card {
+  background: white;
+  padding: 25px;
+  border-radius: 16px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.wellness-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+}
+
+.card-header {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  margin-bottom: 15px;
+}
+
+.card-icon {
+  width: 50px;
+  height: 50px;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+}
+
+.wellness-card h3 {
+  margin: 0;
+  color: #2c3e50;
+  font-size: 1.3rem;
+}
+
+.wellness-card p {
+  color: #7f8c8d;
+  margin-bottom: 20px;
+  line-height: 1.5;
+}
+
+.wellness-card button {
+  width: 100%;
+  padding: 12px;
+  border: none;
+  border-radius: 8px;
+  color: white;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.wellness-card button:hover {
+  opacity: 0.9;
+  transform: translateY(-2px);
+}
+
+/* Sub Options */
+.sub-options {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.sub-option-btn {
+  padding: 10px !important;
+  font-size: 0.9rem !important;
+  background: var(--card-color) !important;
+}
+
+/* Active Exercise Screens */
+.active-exercise-screen,
+.active-sound-screen {
+  background: white;
+  border-radius: 20px;
+  padding: 30px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+  text-align: center;
+}
+
+.exercise-container,
+.sound-container {
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+.exercise-container h3,
+.sound-container h3 {
+  color: #2c3e50;
+  margin-bottom: 10px;
+  font-size: 1.8rem;
+}
+
+.exercise-container p,
+.sound-container p {
+  color: #7f8c8d;
+  margin-bottom: 30px;
+}
+
+/* Breathing Visualization */
+.breathing-visualization {
+  margin: 30px 0;
+}
+
+.breathing-circle {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  margin: 0 auto 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 1s ease;
+  position: relative;
+}
+
+.breathing-circle.inhale {
+  background: #4ecdc4;
+  transform: scale(1.2);
+}
+
+.breathing-circle.hold {
+  background: #45b7d1;
+  transform: scale(1.1);
+}
+
+.breathing-circle.exhale {
+  background: #96ceb4;
+  transform: scale(0.8);
+}
+
+.breathing-circle.ready {
+  background: #f8f9fa;
+  border: 3px dashed #dee2e6;
+}
+
+.breathing-text {
+  text-align: center;
+  color: white;
+}
+
+.phase {
+  font-size: 1.2rem;
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+.timer {
+  font-size: 2rem;
+  font-weight: bold;
+}
+
+.breathing-instruction {
+  font-size: 1.2rem;
+  color: #2c3e50;
+  font-weight: 500;
+}
+
+/* Meditation Visualization */
+.meditation-visualization {
+  margin: 30px 0;
+}
+
+.meditation-circle {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #667eea, #764ba2);
+  margin: 0 auto 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.05); }
+  100% { transform: scale(1); }
+}
+
+.meditation-text {
+  text-align: center;
+  color: white;
+}
+
+.time-remaining {
+  font-size: 2.5rem;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.meditation-state {
+  font-size: 1.1rem;
+}
+
+.meditation-instruction {
+  font-size: 1.1rem;
+  color: #7f8c8d;
+  font-style: italic;
+}
+
+/* Stretch and Mindfulness Visualization */
+.stretch-visualization,
+.mindfulness-visualization {
+  margin: 30px 0;
+}
+
+.stretch-icon,
+.mindfulness-icon {
+  font-size: 4rem;
+  margin-bottom: 20px;
+}
+
+.stretch-instruction,
+.mindfulness-instruction {
+  font-size: 1.1rem;
+  color: #7f8c8d;
+  font-style: italic;
+}
+
+/* Sound Visualization */
+.sound-visualization {
+  margin: 30px 0;
+}
+
+.sound-icon {
+  font-size: 4rem;
+  margin-bottom: 20px;
+}
+
+.sound-waves {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin: 20px 0;
+}
+
+.wave {
+  width: 8px;
+  height: 40px;
+  background: #667eea;
+  border-radius: 4px;
+  animation: wave 1.5s infinite ease-in-out;
+}
+
+.wave:nth-child(2) { animation-delay: 0.2s; }
+.wave:nth-child(3) { animation-delay: 0.4s; }
+
+@keyframes wave {
+  0%, 100% { transform: scaleY(0.5); }
+  50% { transform: scaleY(1.5); }
+}
+
+.sound-note {
+  font-size: 0.9rem;
+  color: #f39c12;
+  margin: 20px 0;
+}
+
+/* Exercise Instructions */
+.exercise-instructions {
+  text-align: left;
+  margin: 30px 0;
+  padding: 20px;
+  background: #f8f9fa;
+  border-radius: 12px;
+}
+
+.exercise-instructions h4 {
+  color: #2c3e50;
+  margin-bottom: 15px;
+}
+
+.exercise-instructions ol {
+  padding-left: 20px;
+  color: #5a6c7d;
+}
+
+.exercise-instructions li {
+  margin-bottom: 8px;
+  line-height: 1.5;
+}
+
+/* Stop Button */
+.stop-exercise-btn {
+  background: #e74c3c;
+  color: white;
+  border: none;
+  padding: 12px 30px;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.stop-exercise-btn:hover {
+  background: #c0392b;
+  transform: translateY(-2px);
+}
+
+/* Wellness Tips */
+.wellness-tips {
+  background: white;
+  padding: 30px;
+  border-radius: 16px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
+
+.wellness-tips h3 {
+  color: #2c3e50;
+  margin-bottom: 20px;
+  text-align: center;
+  font-size: 1.5rem;
+}
+
+.tips-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+}
+
+.tip {
+  padding: 20px;
+  background: #f8f9fa;
+  border-radius: 12px;
+  border-left: 4px solid #4ecdc4;
+}
+
+.tip h4 {
+  color: #2c3e50;
+  margin-bottom: 8px;
+}
+
+.tip p {
+  color: #7f8c8d;
+  margin: 0;
+  font-size: 0.9rem;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .wellness-center {
+    padding: 15px;
+  }
+  
+  .wellness-stats {
+    grid-template-columns: 1fr;
+  }
+  
+  .wellness-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .tips-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .breathing-circle,
+  .meditation-circle {
+    width: 150px;
+    height: 150px;
+  }
+  
+  .time-remaining {
+    font-size: 2rem;
+  }
+}

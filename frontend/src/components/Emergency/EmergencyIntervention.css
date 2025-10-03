@@ -1,0 +1,785 @@
+/* EmergencyIntervention.css */
+.emergency-intervention {
+    background: linear-gradient(135deg, #ff6b6b, #ee5a52);
+    color: white;
+    border-radius: 16px;
+    padding: 24px;
+    margin: 20px 0;
+    box-shadow: 0 8px 32px rgba(255, 107, 107, 0.3);
+    border: 2px solid rgba(255, 255, 255, 0.2);
+}
+
+.emergency-intervention.high {
+    background: linear-gradient(135deg, #ff9f43, #ff7f00);
+}
+
+.emergency-intervention.severe {
+    background: linear-gradient(135deg, #ff6b6b, #c23616);
+    animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.02); }
+    100% { transform: scale(1); }
+}
+
+.emergency-header {
+    margin-bottom: 24px;
+}
+
+.emergency-alert {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    padding: 16px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 12px;
+    backdrop-filter: blur(10px);
+}
+
+.alert-icon {
+    font-size: 2.5rem;
+}
+
+.alert-content h3 {
+    margin: 0 0 8px 0;
+    font-size: 1.5rem;
+}
+
+.crisis-level {
+    background: rgba(255, 255, 255, 0.2);
+    padding: 6px 12px;
+    border-radius: 20px;
+    font-weight: 600;
+    font-size: 0.9rem;
+}
+
+/* Video Call Interface */
+.video-call-interface {
+    background: rgba(0, 0, 0, 0.3);
+    border-radius: 16px;
+    padding: 24px;
+    margin-bottom: 20px;
+}
+
+.video-call-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+    padding-bottom: 16px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.video-call-header h4 {
+    margin: 0;
+    color: #4ecdc4;
+}
+
+.call-status {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 0.9rem;
+    opacity: 0.8;
+}
+
+.status-indicator {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: #4ecdc4;
+    animation: pulse 2s infinite;
+}
+
+/* Video Container */
+.video-container {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 16px;
+    height: 400px;
+    margin-bottom: 20px;
+}
+
+.video-wrapper {
+    position: relative;
+    background: rgba(0, 0, 0, 0.5);
+    border-radius: 12px;
+    overflow: hidden;
+    border: 2px solid rgba(255, 255, 255, 0.1);
+}
+
+.remote-video {
+    grid-column: 1;
+}
+
+.local-video {
+    grid-column: 2;
+    position: relative;
+}
+
+.video-label {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    background: rgba(0, 0, 0, 0.7);
+    color: white;
+    padding: 6px 12px;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: 500;
+    z-index: 10;
+}
+
+.video-element {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    background: #1a1a2e;
+}
+
+.video-placeholder {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    color: rgba(255, 255, 255, 0.7);
+    text-align: center;
+}
+
+.placeholder-icon {
+    font-size: 4rem;
+    margin-bottom: 16px;
+    opacity: 0.5;
+}
+
+/* Video Controls */
+.video-controls {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.control-btn {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    border: none;
+    background: rgba(255, 255, 255, 0.2);
+    color: white;
+    font-size: 1.5rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.control-btn:hover {
+    background: rgba(255, 255, 255, 0.3);
+    transform: scale(1.1);
+}
+
+.control-btn.muted {
+    background: rgba(255, 107, 107, 0.3);
+}
+
+.control-btn.disabled {
+    background: rgba(255, 255, 255, 0.1);
+    opacity: 0.5;
+}
+
+.control-btn.end-call {
+    background: rgba(255, 107, 107, 0.8);
+}
+
+.control-btn.end-call:hover {
+    background: rgba(255, 107, 107, 1);
+    transform: scale(1.1);
+}
+
+/* Tabs */
+.emergency-tabs {
+    display: flex;
+    gap: 8px;
+    margin-bottom: 24px;
+    background: rgba(255, 255, 255, 0.1);
+    padding: 8px;
+    border-radius: 12px;
+}
+
+.tab-button {
+    flex: 1;
+    padding: 12px 16px;
+    border: none;
+    background: transparent;
+    color: white;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: 500;
+    transition: all 0.3s ease;
+}
+
+.tab-button.active {
+    background: rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(10px);
+}
+
+.tab-button:hover:not(.active) {
+    background: rgba(255, 255, 255, 0.1);
+}
+
+/* Tab Content */
+.emergency-tab-content {
+    margin-bottom: 24px;
+}
+
+/* Emergency Actions Grid */
+.emergency-actions-grid {
+    display: grid;
+    gap: 12px;
+    margin-bottom: 24px;
+}
+
+.emergency-btn {
+    padding: 16px 20px;
+    border: none;
+    border-radius: 12px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-align: center;
+}
+
+.emergency-btn.primary {
+    background: linear-gradient(135deg, #ff3838, #ff0000);
+    color: white;
+    box-shadow: 0 4px 15px rgba(255, 56, 56, 0.4);
+}
+
+.emergency-btn.primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(255, 56, 56, 0.6);
+}
+
+.emergency-btn.secondary {
+    background: rgba(255, 255, 255, 0.2);
+    color: white;
+    border: 2px solid rgba(255, 255, 255, 0.3);
+}
+
+.emergency-btn.secondary:hover {
+    background: rgba(255, 255, 255, 0.3);
+    transform: translateY(-1px);
+}
+
+.emergency-btn:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+    transform: none !important;
+}
+
+/* Hotline Grid */
+.hotline-grid {
+    display: grid;
+    gap: 16px;
+}
+
+.hotline-card {
+    background: rgba(255, 255, 255, 0.1);
+    padding: 20px;
+    border-radius: 12px;
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.hotline-card h4 {
+    margin: 0 0 8px 0;
+    font-size: 1.1rem;
+}
+
+.hotline-card p {
+    margin: 0 0 16px 0;
+    font-size: 1.2rem;
+    font-weight: 600;
+}
+
+.call-btn {
+    padding: 10px 20px;
+    background: rgba(255, 255, 255, 0.2);
+    color: white;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: 500;
+    transition: all 0.3s ease;
+}
+
+.call-btn:hover:not(.disabled) {
+    background: rgba(255, 255, 255, 0.3);
+    transform: translateY(-1px);
+}
+
+.call-btn.disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+/* Counselor Section */
+.counselor-section {
+    background: rgba(255, 255, 255, 0.1);
+    padding: 24px;
+    border-radius: 12px;
+    backdrop-filter: blur(10px);
+    margin-bottom: 20px;
+}
+
+.counselor-info {
+    display: flex;
+    gap: 20px;
+    align-items: flex-start;
+    margin-bottom: 20px;
+}
+
+.counselor-avatar {
+    font-size: 3rem;
+    flex-shrink: 0;
+}
+
+.counselor-details h4 {
+    margin: 0 0 8px 0;
+    font-size: 1.3rem;
+}
+
+.counselor-details p {
+    margin: 0 0 16px 0;
+    opacity: 0.9;
+}
+
+.features-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+}
+
+.features-list span {
+    background: rgba(255, 255, 255, 0.2);
+    padding: 6px 12px;
+    border-radius: 20px;
+    font-size: 0.9rem;
+}
+
+.counselor-connect-btn {
+    width: 100%;
+    padding: 18px;
+    background: linear-gradient(135deg, #4ecdc4, #44a08d);
+    color: white;
+    border: none;
+    border-radius: 12px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+}
+
+.counselor-connect-btn:hover:not(:disabled) {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(78, 205, 196, 0.4);
+}
+
+.counselor-connect-btn:disabled {
+    opacity: 0.7;
+    cursor: not-allowed;
+}
+
+.connecting-spinner {
+    width: 20px;
+    height: 20px;
+    border: 2px solid transparent;
+    border-top: 2px solid white;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+.connection-success {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    padding: 20px;
+    background: rgba(46, 204, 113, 0.2);
+    border-radius: 12px;
+    border: 1px solid rgba(46, 204, 113, 0.5);
+}
+
+.success-icon {
+    font-size: 2rem;
+}
+
+.connection-success h4 {
+    margin: 0 0 4px 0;
+    color: #2ecc71;
+}
+
+.connection-success p {
+    margin: 0;
+    opacity: 0.9;
+}
+
+/* Safety Section */
+.safety-section {
+    background: rgba(255, 255, 255, 0.1);
+    padding: 20px;
+    border-radius: 12px;
+    backdrop-filter: blur(10px);
+}
+
+.safety-section h4 {
+    margin: 0 0 16px 0;
+}
+
+.safety-check {
+    text-align: center;
+    padding: 20px;
+    background: rgba(231, 76, 60, 0.2);
+    border-radius: 12px;
+    border: 1px solid rgba(231, 76, 60, 0.5);
+}
+
+.countdown-timer {
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin: 16px 0;
+    color: #ffeb3b;
+}
+
+.safety-confirm-btn {
+    padding: 12px 24px;
+    background: #2ecc71;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.safety-confirm-btn:hover {
+    background: #27ae60;
+    transform: translateY(-1px);
+}
+
+/* Contacts Section */
+.contacts-section {
+    margin-bottom: 24px;
+}
+
+.contacts-section h4 {
+    margin-bottom: 16px;
+}
+
+.contacts-list {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.contact-card {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    padding: 16px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 12px;
+    backdrop-filter: blur(10px);
+}
+
+.contact-avatar {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.2);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 600;
+    font-size: 1.2rem;
+}
+
+.contact-info {
+    flex: 1;
+}
+
+.contact-info h5 {
+    margin: 0 0 4px 0;
+    font-size: 1.1rem;
+}
+
+.contact-info p {
+    margin: 0 0 4px 0;
+    opacity: 0.8;
+    font-size: 0.9rem;
+}
+
+.contact-phone {
+    font-weight: 600;
+}
+
+.contact-call-btn {
+    padding: 10px;
+    background: rgba(255, 255, 255, 0.2);
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 1.2rem;
+    transition: all 0.3s ease;
+}
+
+.contact-call-btn:hover {
+    background: rgba(255, 255, 255, 0.3);
+    transform: scale(1.1);
+}
+
+.no-contacts {
+    text-align: center;
+    padding: 40px 20px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 12px;
+}
+
+.add-contacts-btn {
+    padding: 12px 24px;
+    background: rgba(255, 255, 255, 0.2);
+    color: white;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: 500;
+    margin-top: 12px;
+}
+
+.add-contacts-btn:hover {
+    background: rgba(255, 255, 255, 0.3);
+}
+
+/* Location Sharing */
+.location-sharing {
+    background: rgba(255, 255, 255, 0.1);
+    padding: 20px;
+    border-radius: 12px;
+    backdrop-filter: blur(10px);
+    text-align: center;
+}
+
+.location-sharing h4 {
+    margin: 0 0 8px 0;
+}
+
+.location-sharing p {
+    margin: 0 0 16px 0;
+    opacity: 0.9;
+}
+
+.location-btn {
+    padding: 12px 24px;
+    background: rgba(255, 255, 255, 0.2);
+    color: white;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: 500;
+    transition: all 0.3s ease;
+}
+
+.location-btn:hover {
+    background: rgba(255, 255, 255, 0.3);
+}
+
+.location-btn.shared {
+    background: rgba(46, 204, 113, 0.3);
+    border-color: rgba(46, 204, 113, 0.5);
+}
+
+/* Grounding Exercise */
+.grounding-exercise {
+    background: rgba(255, 255, 255, 0.1);
+    padding: 20px;
+    border-radius: 12px;
+    backdrop-filter: blur(10px);
+    margin-bottom: 20px;
+}
+
+.grounding-exercise h4 {
+    margin: 0 0 16px 0;
+    text-align: center;
+}
+
+.grounding-steps {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    justify-content: center;
+}
+
+.grounding-step {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+    padding: 16px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 12px;
+    min-width: 120px;
+}
+
+.step-number {
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: #ffeb3b;
+}
+
+.step-text {
+    font-size: 0.9rem;
+    text-align: center;
+    line-height: 1.2;
+}
+
+/* Emergency Instructions */
+.emergency-instructions {
+    background: rgba(255, 255, 255, 0.1);
+    padding: 20px;
+    border-radius: 12px;
+    backdrop-filter: blur(10px);
+}
+
+.emergency-instructions h4 {
+    margin: 0 0 16px 0;
+    text-align: center;
+}
+
+.emergency-instructions ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.emergency-instructions li {
+    padding: 8px 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.emergency-instructions li:last-child {
+    border-bottom: none;
+}
+
+.emergency-instructions li::before {
+    content: '⚠️';
+    margin-right: 12px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .emergency-intervention {
+        padding: 16px;
+        margin: 16px 0;
+    }
+
+    /* Video Responsive */
+    .video-container {
+        grid-template-columns: 1fr;
+        grid-template-rows: 2fr 1fr;
+        height: 500px;
+    }
+    
+    .remote-video {
+        grid-column: 1;
+        grid-row: 1;
+    }
+    
+    .local-video {
+        grid-column: 1;
+        grid-row: 2;
+    }
+    
+    .video-controls {
+        gap: 12px;
+    }
+    
+    .control-btn {
+        width: 50px;
+        height: 50px;
+        font-size: 1.2rem;
+    }
+
+    .video-call-header {
+        flex-direction: column;
+        gap: 12px;
+        text-align: center;
+    }
+
+    /* Tabs Responsive */
+    .emergency-tabs {
+        flex-direction: column;
+    }
+
+    .counselor-info {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .features-list {
+        justify-content: center;
+    }
+
+    .grounding-steps {
+        flex-direction: column;
+    }
+
+    .grounding-step {
+        flex-direction: row;
+        justify-content: flex-start;
+        min-width: auto;
+    }
+
+    .contact-card {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .contact-info {
+        text-align: center;
+    }
+}
+
+@media (max-width: 480px) {
+    .video-container {
+        height: 400px;
+    }
+    
+    .video-call-header {
+        flex-direction: column;
+        gap: 12px;
+        text-align: center;
+    }
+    
+    .video-controls {
+        gap: 8px;
+    }
+    
+    .control-btn {
+        width: 45px;
+        height: 45px;
+        font-size: 1.1rem;
+    }
+}

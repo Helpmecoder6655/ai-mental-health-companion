@@ -1,0 +1,628 @@
+/* AnalyticsDashboard.css */
+.analytics-dashboard {
+    padding: 24px;
+    max-width: 1200px;
+    margin: 0 auto;
+    background: #f8fafc;
+    min-height: 100vh;
+}
+
+.analytics-header {
+    text-align: center;
+    margin-bottom: 32px;
+}
+
+.analytics-header h1 {
+    font-size: 2.5rem;
+    color: #1e293b;
+    margin-bottom: 8px;
+    font-weight: 700;
+}
+
+.analytics-header p {
+    color: #64748b;
+    font-size: 1.1rem;
+    margin-bottom: 24px;
+}
+
+.time-range-selector {
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+    flex-wrap: wrap;
+}
+
+.time-range-selector button {
+    padding: 10px 20px;
+    border: 2px solid #e2e8f0;
+    background: white;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: 500;
+    color: #64748b;
+    transition: all 0.3s ease;
+}
+
+.time-range-selector button.active {
+    background: #3b82f6;
+    color: white;
+    border-color: #3b82f6;
+}
+
+.time-range-selector button:hover:not(.active) {
+    border-color: #3b82f6;
+    color: #3b82f6;
+}
+
+/* Metrics Grid */
+.metrics-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 24px;
+    margin-bottom: 32px;
+}
+
+.metric-card {
+    background: white;
+    padding: 24px;
+    border-radius: 12px;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+    border-left: 4px solid;
+}
+
+.mood-card { border-left-color: #10b981; }
+.sessions-card { border-left-color: #3b82f6; }
+.wellness-card { border-left-color: #f59e0b; }
+.stress-card { border-left-color: #ef4444; }
+
+.metric-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 16px;
+}
+
+.metric-header h3 {
+    color: #374151;
+    font-size: 1rem;
+    font-weight: 600;
+    margin: 0;
+}
+
+.mood-emoji, .metric-icon {
+    font-size: 1.5rem;
+}
+
+.metric-value {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: #1e293b;
+    margin-bottom: 8px;
+}
+
+.metric-description {
+    color: #64748b;
+    font-size: 0.9rem;
+    margin-bottom: 12px;
+}
+
+.metric-description.positive {
+    color: #10b981;
+    font-weight: 600;
+}
+
+.metric-description.negative {
+    color: #ef4444;
+    font-weight: 600;
+}
+
+.metric-trend {
+    font-size: 0.8rem;
+    color: #94a3b8;
+}
+
+/* Progress Bar */
+.progress-bar {
+    width: 100%;
+    height: 8px;
+    background: #e2e8f0;
+    border-radius: 4px;
+    overflow: hidden;
+    margin-top: 12px;
+}
+
+.progress-fill {
+    height: 100%;
+    background: linear-gradient(90deg, #f59e0b, #fbbf24);
+    border-radius: 4px;
+    transition: width 0.5s ease;
+}
+
+/* Stress Indicator */
+.stress-indicator {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-top: 12px;
+}
+
+.stress-dot {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+}
+
+.stress-dot.low { background: #10b981; }
+.stress-dot.medium { background: #f59e0b; }
+.stress-dot.high { background: #ef4444; }
+
+.stress-label {
+    font-size: 0.8rem;
+    color: #64748b;
+}
+
+/* Charts Section */
+.charts-section {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
+    gap: 24px;
+    margin-bottom: 32px;
+}
+
+.chart-container {
+    background: white;
+    padding: 24px;
+    border-radius: 12px;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+}
+
+.chart-header {
+    margin-bottom: 24px;
+}
+
+.chart-header h3 {
+    color: #1e293b;
+    margin-bottom: 4px;
+    font-size: 1.25rem;
+}
+
+.chart-subtitle {
+    color: #64748b;
+    font-size: 0.9rem;
+}
+
+/* Mood Chart - Responsive for all time ranges */
+.mood-chart {
+    display: flex;
+    align-items: end;
+    justify-content: space-between;
+    height: 200px;
+    padding: 20px 0;
+    gap: 8px;
+}
+
+.mood-chart.week {
+    gap: 8px;
+}
+
+.mood-chart.month {
+    gap: 6px;
+}
+
+.mood-chart.year {
+    gap: 4px;
+}
+
+.chart-column {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex: 1;
+    height: 100%;
+    min-width: 0;
+}
+
+.chart-bar {
+    width: 100%;
+    background: linear-gradient(to top, #3b82f6, #60a5fa);
+    border-radius: 6px 6px 0 0;
+    position: relative;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: end;
+    justify-content: center;
+    min-height: 20px;
+}
+
+.mood-chart.week .chart-bar {
+    max-width: 40px;
+}
+
+.mood-chart.month .chart-bar {
+    max-width: 30px;
+}
+
+.mood-chart.year .chart-bar {
+    max-width: 20px;
+}
+
+.chart-bar:hover {
+    transform: scale(1.05);
+    background: linear-gradient(to top, #2563eb, #3b82f6);
+}
+
+.bar-value {
+    color: white;
+    font-weight: 600;
+    font-size: 0.8rem;
+    margin-bottom: 4px;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+}
+
+.mood-chart.year .bar-value {
+    font-size: 0.7rem;
+}
+
+.chart-label {
+    margin-top: 8px;
+    font-size: 0.8rem;
+    color: #64748b;
+    font-weight: 500;
+    text-align: center;
+    word-break: break-word;
+    max-width: 100%;
+}
+
+.mood-chart.year .chart-label {
+    font-size: 0.7rem;
+    transform: rotate(-45deg);
+    transform-origin: top left;
+    margin-left: 8px;
+    white-space: nowrap;
+}
+
+/* Emotion Chart */
+.emotion-chart {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.emotion-item {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.emotion-info {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.emotion-name {
+    font-weight: 500;
+    color: #374151;
+    font-size: 0.9rem;
+    min-width: 80px;
+}
+
+.emotion-percentage {
+    font-weight: 600;
+    color: #1e293b;
+    font-size: 0.9rem;
+    min-width: 40px;
+    text-align: right;
+}
+
+.emotion-bar-container {
+    height: 20px;
+    background: #f1f5f9;
+    border-radius: 10px;
+    overflow: hidden;
+    flex: 1;
+}
+
+.emotion-bar {
+    height: 100%;
+    border-radius: 10px;
+    transition: width 0.5s ease;
+    position: relative;
+}
+
+.emotion-bar[data-emotion="happy"] { background: linear-gradient(90deg, #10b981, #34d399); }
+.emotion-bar[data-emotion="calm"] { background: linear-gradient(90deg, #3b82f6, #60a5fa); }
+.emotion-bar[data-emotion="anxious"] { background: linear-gradient(90deg, #f59e0b, #fbbf24); }
+.emotion-bar[data-emotion="sad"] { background: linear-gradient(90deg, #8b5cf6, #a78bfa); }
+.emotion-bar[data-emotion="angry"] { background: linear-gradient(90deg, #ef4444, #f87171); }
+.emotion-bar[data-emotion="excited"] { background: linear-gradient(90deg, #ec4899, #f472b6); }
+.emotion-bar[data-emotion="neutral"] { background: linear-gradient(90deg, #6b7280, #9ca3af); }
+.emotion-bar[data-emotion="grateful"] { background: linear-gradient(90deg, #84cc16, #a3e635); }
+.emotion-bar[data-emotion="stressed"] { background: linear-gradient(90deg, #dc2626, #ef4444); }
+
+/* Insights Section */
+.insights-section {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+    gap: 24px;
+    margin-bottom: 32px;
+}
+
+.activities-card, .personal-insights {
+    background: white;
+    padding: 24px;
+    border-radius: 12px;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+}
+
+.activities-card h3, .personal-insights h3 {
+    color: #1e293b;
+    margin-bottom: 20px;
+    font-size: 1.25rem;
+}
+
+.activities-list {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.activity-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px 16px;
+    background: #f8fafc;
+    border-radius: 8px;
+    border-left: 4px solid #3b82f6;
+}
+
+.activity-name {
+    font-weight: 500;
+    color: #374151;
+}
+
+.activity-stats {
+    display: flex;
+    gap: 16px;
+    font-size: 0.9rem;
+}
+
+.frequency {
+    color: #3b82f6;
+    font-weight: 600;
+}
+
+.duration {
+    color: #64748b;
+}
+
+.no-data {
+    text-align: center;
+    color: #94a3b8;
+    padding: 40px 20px;
+}
+
+.no-data-icon {
+    font-size: 3rem;
+    margin-bottom: 16px;
+    opacity: 0.5;
+}
+
+.no-data p {
+    margin: 0 0 8px 0;
+    font-size: 1.1rem;
+}
+
+.no-data small {
+    font-size: 0.9rem;
+}
+
+/* Insights List */
+.insights-list {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.insight {
+    display: flex;
+    gap: 12px;
+    padding: 16px;
+    border-radius: 8px;
+    border-left: 4px solid;
+}
+
+.insight.positive {
+    background: #f0fdf4;
+    border-left-color: #10b981;
+}
+
+.insight.suggestion {
+    background: #fffbeb;
+    border-left-color: #f59e0b;
+}
+
+.insight.reminder {
+    background: #fef2f2;
+    border-left-color: #ef4444;
+}
+
+.insight-icon {
+    font-size: 1.2rem;
+    flex-shrink: 0;
+}
+
+.insight-text strong {
+    display: block;
+    margin-bottom: 4px;
+    color: #1e293b;
+    font-size: 0.9rem;
+}
+
+.insight-text p {
+    margin: 0;
+    color: #64748b;
+    font-size: 0.9rem;
+    line-height: 1.4;
+}
+
+/* Data Footer */
+.data-footer {
+    text-align: center;
+    padding: 20px;
+    border-top: 1px solid #e2e8f0;
+}
+
+.refresh-btn {
+    background: #3b82f6;
+    color: white;
+    border: none;
+    padding: 12px 24px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    margin-bottom: 12px;
+}
+
+.refresh-btn:hover:not(:disabled) {
+    background: #2563eb;
+    transform: translateY(-2px);
+}
+
+.refresh-btn:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+}
+
+.last-updated {
+    color: #94a3b8;
+    font-size: 0.9rem;
+}
+
+/* Loading States */
+.loading .analytics-header p {
+    color: #3b82f6;
+}
+
+.loading-spinner {
+    text-align: center;
+    padding: 60px;
+}
+
+.spinner {
+    width: 40px;
+    height: 40px;
+    border: 4px solid #e2e8f0;
+    border-top: 4px solid #3b82f6;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+    margin: 0 auto;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+.retry-btn {
+    background: #ef4444;
+    color: white;
+    border: none;
+    padding: 12px 24px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: 500;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .analytics-dashboard {
+        padding: 16px;
+    }
+    
+    .analytics-header h1 {
+        font-size: 2rem;
+    }
+    
+    .metrics-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .charts-section {
+        grid-template-columns: 1fr;
+    }
+    
+    .chart-container {
+        padding: 16px;
+    }
+    
+    .mood-chart {
+        height: 150px;
+        gap: 4px;
+    }
+    
+    .mood-chart.week .chart-bar {
+        max-width: 30px;
+    }
+    
+    .mood-chart.month .chart-bar {
+        max-width: 20px;
+    }
+    
+    .mood-chart.year .chart-bar {
+        max-width: 12px;
+    }
+    
+    .bar-value {
+        font-size: 0.7rem;
+    }
+    
+    .chart-label {
+        font-size: 0.7rem;
+    }
+    
+    .mood-chart.year .chart-label {
+        transform: none;
+        margin-left: 0;
+    }
+    
+    .insights-section {
+        grid-template-columns: 1fr;
+    }
+    
+    .activity-item {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 8px;
+    }
+    
+    .activity-stats {
+        width: 100%;
+        justify-content: space-between;
+    }
+}
+
+@media (max-width: 480px) {
+    .time-range-selector {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .time-range-selector button {
+        width: 200px;
+    }
+    
+    .mood-chart {
+        height: 120px;
+    }
+    
+    .chart-bar {
+        min-height: 15px;
+    }
+    
+    .bar-value {
+        font-size: 0.6rem;
+    }
+}
